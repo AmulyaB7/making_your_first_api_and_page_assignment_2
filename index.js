@@ -24,7 +24,6 @@ app.get('/status-info', (req, res) => {
     res.json({ status: code, message });
 });
 
-// Route for Virtual Assistant API
 app.get('/assistant/greet', (req, res) => {
     const name = req.query.name || 'Guest';
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -33,13 +32,9 @@ app.get('/assistant/greet', (req, res) => {
         message: `Hello, ${name}! Happy ${today}!`,
     });
 });
-
-// Default route for the root URL
 app.get('/', (req, res) => {
     res.send('Welcome to the HTTP Status Code API and Virtual Assistant API!');
 });
-
-// Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
